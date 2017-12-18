@@ -1,0 +1,183 @@
+{
+    "interface": [
+        {
+            "constant": true,
+            "inputs": [
+                {
+                    "name": "_owner",
+                    "type": "address"
+                },
+                {
+                    "name": "_key",
+                    "type": "bytes32"
+                },
+                {
+                    "name": "time",
+                    "type": "uint256"
+                }
+            ],
+            "name": "isActiveAt",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "_key",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "addKey",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "_key",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "removeKey",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [],
+            "name": "owner",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [
+                {
+                    "name": "_owner",
+                    "type": "address"
+                },
+                {
+                    "name": "_key",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "getKeyRemoveDate",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [
+                {
+                    "name": "_owner",
+                    "type": "address"
+                },
+                {
+                    "name": "_key",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "isActiveNow",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [
+                {
+                    "name": "_owner",
+                    "type": "address"
+                },
+                {
+                    "name": "_key",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "getKeyAddDate",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "key",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "KeyAdded",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "key",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "KeyRemoved",
+            "type": "event"
+        }
+    ],
+    "bytecode": "6060604052341561000f57600080fd5b336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506107418061005e6000396000f300606060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063604f7aa11461008857806360e6cfd8146100ef578063862642f5146101165780638da5cb5b1461013d578063b2a3d25814610192578063c1ce3f31146101ec578063c1dd40ab1461024a575b600080fd5b341561009357600080fd5b6100d5600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091908035600019169060200190919080359060200190919050506102a4565b604051808215151515815260200191505060405180910390f35b34156100fa57600080fd5b610114600480803560001916906020019091905050610340565b005b341561012157600080fd5b61013b600480803560001916906020019091905050610469565b005b341561014857600080fd5b6101506105a6565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561019d57600080fd5b6101d6600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091908035600019169060200190919050506105cb565b6040518082815260200191505060405180910390f35b34156101f757600080fd5b610230600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803560001916906020019091905050610631565b604051808215151515815260200191505060405180910390f35b341561025557600080fd5b61028e600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091908035600019169060200190919050506106af565b6040518082815260200191505060405180910390f35b600080600160008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600085600019166000191681526020019081526020016000209050600081600001541180156103185750828160000154105b8015610328575060008160010154145b806103365750828160010154115b9150509392505050565b6000600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600083600019166000191681526020019081526020016000209050600081600001541415156103af57600080fd5b42600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008460001916600019168152602001908152602001600020600001819055503373ffffffffffffffffffffffffffffffffffffffff167f324f5ba0d1c7a84e0b2e708de6120a0846e8a2f881d42ac5347434a646bcc13d8360405180826000191660001916815260200191505060405180910390a25050565b6000600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008360001916600019168152602001908152602001600020905060008160000154141515156104d957600080fd5b600081600101541415156104ec57600080fd5b42600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008460001916600019168152602001908152602001600020600101819055503373ffffffffffffffffffffffffffffffffffffffff167f0bac505c178ca0ad9e61547c8e369b88e20b35c18e57920f03260946c12a53b58360405180826000191660001916815260200191505060405180910390a25050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000836000191660001916815260200190815260200160002060010154905092915050565b600080600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600084600019166000191681526020019081526020016000209050600081600001541180156106a6575060008160010154145b91505092915050565b6000600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008360001916600019168152602001908152602001600020600001549050929150505600a165627a7a72305820a5439b9dfafb318fb990efbb062bf106c59107d870188a0ac590aa772a7d3a150029"
+}

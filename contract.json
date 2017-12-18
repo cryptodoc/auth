@@ -1,0 +1,193 @@
+{
+    "address": "0x9f2771F5F8D0A889602C8309009e3956004B3A24",
+    "interface": [
+        {
+            "constant": true,
+            "inputs": [
+                {
+                    "name": "_owner",
+                    "type": "address"
+                },
+                {
+                    "name": "_key",
+                    "type": "bytes32"
+                },
+                {
+                    "name": "time",
+                    "type": "uint256"
+                }
+            ],
+            "name": "isActiveAt",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+            "signature": "0x604f7aa1"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "_key",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "addKey",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+            "signature": "0x60e6cfd8"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "_key",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "removeKey",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+            "signature": "0x862642f5"
+        },
+        {
+            "constant": true,
+            "inputs": [],
+            "name": "owner",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+            "signature": "0x8da5cb5b"
+        },
+        {
+            "constant": true,
+            "inputs": [
+                {
+                    "name": "_owner",
+                    "type": "address"
+                },
+                {
+                    "name": "_key",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "getKeyRemoveDate",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+            "signature": "0xb2a3d258"
+        },
+        {
+            "constant": true,
+            "inputs": [
+                {
+                    "name": "_owner",
+                    "type": "address"
+                },
+                {
+                    "name": "_key",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "isActiveNow",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+            "signature": "0xc1ce3f31"
+        },
+        {
+            "constant": true,
+            "inputs": [
+                {
+                    "name": "_owner",
+                    "type": "address"
+                },
+                {
+                    "name": "_key",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "getKeyAddDate",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+            "signature": "0xc1dd40ab"
+        },
+        {
+            "inputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "constructor",
+            "signature": "constructor"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "key",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "KeyAdded",
+            "type": "event",
+            "signature": "0x324f5ba0d1c7a84e0b2e708de6120a0846e8a2f881d42ac5347434a646bcc13d"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "key",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "KeyRemoved",
+            "type": "event",
+            "signature": "0x0bac505c178ca0ad9e61547c8e369b88e20b35c18e57920f03260946c12a53b5"
+        }
+    ]
+}
