@@ -1,5 +1,5 @@
 const Error3 = require('error3');
-const defaults = require('../contract.json');
+const contract = require('../abi.json');
 const Contract = require('./contract.js');
 
 const {withAbi} = Contract;
@@ -8,7 +8,6 @@ class Keys extends Contract {
     constructor(options) {
         super({
             ...options,
-            abi: defaults.interface,
         });
     }
 
@@ -21,7 +20,7 @@ class Keys extends Contract {
             throw new Error('Invalid key content');
         }
 
-        return this.contract.methods
+        return this._contract.methods
         .addKey(key)
         .send();
     }
@@ -35,13 +34,13 @@ class Keys extends Contract {
             throw new Error('Invalid key content');
         }
 
-        return this.contract.methods
+        return this._contract.methods
         .removeKey(key)
         .send();
     }
 
     isActiveNow(address, key) {
-        return this.contract.methods
+        return this._contract.methods
         .isActiveNow(address, key)
         .call();
     }
@@ -60,13 +59,13 @@ class Keys extends Contract {
             throw new Error(`Invalid date value ${_date}`);
         }
 
-        return this.contract.methods
+        return this._contract.methods
         .isActiveAt(address, key, Math.floor(date.getTime() / 1000))
         .call();
     }
 
     getKeyAddDate(address, key) {
-        return this.contract.methods
+        return this._contract.methods
         .getKeyAddDate(address, key)
         .call()
         .then((result) => {
@@ -80,7 +79,7 @@ class Keys extends Contract {
     }
 
     getKeyRemoveDate(address, key) {
-        return this.contract.methods
+        return this._contract.methods
         .getKeyRemoveDate(address, key)
         .call()
         .then((result) => {
@@ -94,4 +93,4 @@ class Keys extends Contract {
     }
 }
 
-module.exports = withAbi(defaults.interface)(Keys);
+module.exports = withAbi(contract.interface, contract.bytecode)(Keys);

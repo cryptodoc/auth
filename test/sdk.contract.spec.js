@@ -29,15 +29,12 @@ describe('Sdk.Contract', function() {
         accounts = await web3.eth.getAccounts();
         coinbase = accounts[0];
 
-        const contract = new web3.eth.Contract(code.interface, {
+        const contract = new Contract({
+            web3,
             from: coinbase,
-            gas: 5000000,
         });
 
-        const result = await contract.deploy({
-            data: code.bytecode,
-            arguments: [],
-        }).send();
+        const result = await Contract.deploy(contract);
 
         keys = new Contract({
             web3,
@@ -48,7 +45,7 @@ describe('Sdk.Contract', function() {
 
     describe('Keychain()', function() {
         it('Should instantiate contract', async function() {
-            const owner = await keys.contract.methods.owner().call();
+            const owner = await keys._contract.methods.owner().call();
 
             should(owner).be.equal(coinbase);
         });
